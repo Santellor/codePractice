@@ -1,18 +1,21 @@
 function disemvowel(str) {
     const vowels = [`a`,`e`, `i`, `o`,`u`, `A`,`E`, `I`, `O`,`U`]
+// could work as a string 
+    // aeiou
+    // when checking, use .lowercase in the filter. that won't change the value of the original 
+
     return str.split(``).filter((letter) => !vowels.includes(letter)).join(``);
   }
 
+function createPhoneNumber(numbers){
+      return `(${numbers.slice(0,3).join(``)}) ${numbers.slice(3,6).join(``)}-${numbers.slice(6).join(``)}`
+}
+    
+    // using RegEx
+    function disemvowel(str) {
+      return str.replace(/[aeiou]/gi, '');
+    } // g is global, i is case insensitive
 
-  // using RegEx
-  function disemvowel(str) {
-    return str.replace(/[aeiou]/gi, '');
-  }
-
-
-  function createPhoneNumber(numbers){
-    return `(${numbers.slice(0,3).join(``)}) ${numbers.slice(3,6).join(``)}-${numbers.slice(6).join(``)}`
-  }
 
   function createPhoneNumber(numbers){
     var format = "(xxx) xxx-xxxx";
